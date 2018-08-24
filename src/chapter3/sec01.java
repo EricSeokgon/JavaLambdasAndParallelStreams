@@ -13,4 +13,15 @@ public class sec01 {
         }
         return result;
     }
+
+    private List<Person> getPersonsByAgeRange(List<Person> persons, int from, int to) {
+        List<Person> result = new ArrayList<>();
+        for (Person person : persons) {
+            if (person.getAge() >= from && person.getAge() <= to) {
+                result.add(person);
+            }
+        }
+        return result;
+    }
+
 }
