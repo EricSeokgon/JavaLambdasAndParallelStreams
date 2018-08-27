@@ -2,6 +2,7 @@ package chapter3;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.Condition;
 
 public class sec01 {
     private List<Person> getPersonsLessThan20Years(List<Person> persons) {
@@ -23,5 +24,24 @@ public class sec01 {
         }
         return result;
     }
+
+    /*private List<Person> getPersonsByDiverseCriteria(List<Person> persons, int ageFrom, int ageTo, Person.Gender gender, boolean isCustomer, boolean isVendor) {
+
+    }*/
+
+    public interface Condition<T> {
+        boolean test(T t);
+    }
+
+    private List<Person> getPersonsByCondition(List<Person> persons, Condition<Person> condition) {
+        List<Person> result = new ArrayList<>();
+        for (Person person : persons) {
+            if (condition.test(person)) {
+                result.add(person);
+            }
+        }
+        return result;
+    }
+
 
 }
