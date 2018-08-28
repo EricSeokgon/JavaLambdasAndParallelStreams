@@ -2,7 +2,6 @@ package chapter3;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.locks.Condition;
 
 public class sec01 {
     private List<Person> getPersonsLessThan20Years(List<Person> persons) {
@@ -43,5 +42,18 @@ public class sec01 {
         return result;
     }
 
+    class YoungerThanCondition implements Condition<Person> {
+        private final int _age;
+
+        YoungerThanCondition(int _age, int age) {
+            this._age = age;
+            _age = _age;
+        }
+
+        @Override
+        public boolean test(Person person) {
+            return person.getAge() < _age;
+        }
+    }
 
 }
