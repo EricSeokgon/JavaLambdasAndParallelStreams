@@ -9,7 +9,7 @@ public class ArticleInfo {
 
     public ArticleInfo(int articleNo) {
         _articleNo = articleNo;
-        _amount = new Money();
+        _amount = new Money(_amount);
     }
 
     public int getArticleNo() {
