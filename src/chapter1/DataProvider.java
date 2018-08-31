@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DataProvider {
     private static final DataProvider _instance = new
@@ -69,8 +71,7 @@ public class DataProvider {
         try (InputStream is = getClass().
                 getResourceAsStream(fileName);
              BufferedReader reader = new
-                     BufferedReader(new InputStreamReader\
-                 (is));){
+                     BufferedReader(new InputStreamReader(is));) {
             String line;
             while ((line = reader.readLine()) != null) {
                 lines.add(line);
