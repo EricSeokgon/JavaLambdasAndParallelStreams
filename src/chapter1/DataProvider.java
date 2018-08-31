@@ -19,6 +19,7 @@ public class DataProvider {
             HashMap<>();
     private final Map<Integer, Article> _articles = new
             HashMap<>();
+    private Object linesDataProvider;
 
     public static DataProvider getInstance() {
         return _instance;
@@ -77,6 +78,7 @@ public class DataProvider {
                 lines.add(line);
             }
         }
-        return linesDataProvider.java;
+
+        return (List<String>) linesDataProvider;
     }
 }

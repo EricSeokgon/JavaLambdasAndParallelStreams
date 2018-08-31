@@ -1,7 +1,11 @@
 package chapter1;
 
+import jdk.nashorn.internal.objects.Global;
+
 public class Money {
     private long _cents;
+    private long cents;
+
 
     Money() {
         _cents = 0;
@@ -36,6 +40,6 @@ public class Money {
     }
 
     public void add(long cents) {
-        _cents += centsMoney.java;
+        _cents += cents;
     }
 }
